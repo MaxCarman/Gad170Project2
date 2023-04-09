@@ -199,6 +199,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8162992}
   m_CullTransparentMesh: 0
+--- !u!114 &99960164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6543671764694310589, guid: 283733ea81c83ab469ffdcfc96834ae6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6543671763865759902}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494ce8c0cf536ea46bed3c5c2aa93d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &506928893
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +652,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 824242356}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 979266057}
+        m_TargetAssemblyTypeName: CharacterName, Assembly-CSharp
+        m_MethodName: TestImplementation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 99960164}
+        m_TargetAssemblyTypeName: CharacterName, Assembly-CSharp
+        m_MethodName: TestImplementation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1289148092}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: TestImplementation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &824242356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +771,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &979266057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3505494822345961049, guid: 0e733d55be6411d41b98a5d9373ad970,
+    type: 3}
+  m_PrefabInstance: {fileID: 8240287817822819730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494ce8c0cf536ea46bed3c5c2aa93d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1289148091
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,7 +1006,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 746351902}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1727,7 +1787,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8162994}
   m_HandleRect: {fileID: 8162993}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

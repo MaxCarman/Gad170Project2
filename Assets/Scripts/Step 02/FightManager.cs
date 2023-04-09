@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -22,26 +23,50 @@ public class FightManager : MonoBehaviour
     /// </summary>
     /// <param name="teamACharacter"></param>
     /// <param name="teamBCharacter"></param>
+    //Decide the winner of a fight between a team A and team B character.
+
+    // -----> For some reason, pressing the test button does not initalise the function at all. I havent touched the NoMod area but it seems to be related to that.
     private void DecideWinner(Character teamACharacter, Character teamBCharacter)
     {
-        // so we are storing our two power levels of each of our characters.
+        Debug.Log("Fighting!");
+        //Retrieve the power level of both fighters. (Although this system only really needs one team)
         int playerOnePowerLevel = teamACharacter.myPowerSystem.ReturnMyDancePowerLevel();
         int playerTwoPowerLevel = teamBCharacter.myPowerSystem.ReturnMyDancePowerLevel();
 
+        //Determine who wins by generating a random number between 1% and 100%. If the value is inside the range of
+        //player one, it means they win. If it isent, that means that player two wins. This allows the percentage chance
+        //of each player to actually contribute, as a 10% VS a 90% will then actually have a 10% to win, as opposed to brief 1.
+        int battleDetermineValue = Random.Range(1, 101);
 
-        // We should probably determine here who has won, and who has lost by comparing their power levels.
-        // we should also do some damage or heal the appropriate characters.
-        // we could also give them some XP if we want to. 
-        // so we have the character class, which means any variables,references and functions we can access.
-
-        // By default it will automatically be a draw.
-        string battleMessage = teamACharacter.charName.GetFullCharacterName() + " " + teamBCharacter.charName.GetFullCharacterName() + " fight is a draw";
-        // Logs out the message to our console         
-        BattleLog.Log(battleMessage, drawCol);
-        BattleLog.Log("team A draw", teamAColour);
-        BattleLog.Log("team B draw", teamBColour);
-        // here we are just telling the system who has won, and who has lost; for any other result other than a draw we should probably pass in false.
-        FightCompleted(teamBCharacter, teamACharacter, true);
+        //Compare the random value and send a relevent battle log message.
+        //Deal damage to the losing team and give XP to the winning team.
+        //If it is a draw, both sides get XP and Health.
+        if (playerOnePowerLevel > battleDetermineValue)
+        {
+            string battleMessage = teamACharacter.charName.GetFullCharacterName() + " VS " + teamBCharacter.charName.GetFullCharacterName() + " Team A Wins";
+            BattleLog.Log(battleMessage, teamAColour);
+            teamBCharacter.myStatsSystem.ChangeHealth(-0.1f);
+            teamACharacter.myLevelSystem.AddXP(Random.Range(15,26));
+            FightCompleted(teamACharacter, teamBCharacter, false);
+        }
+        if (playerOnePowerLevel < battleDetermineValue)
+        {
+            string battleMessage = teamACharacter.charName.GetFullCharacterName() + " VS " + teamBCharacter.charName.GetFullCharacterName() + " Team B Wins";
+            BattleLog.Log(battleMessage, teamBColour);
+            teamACharacter.myStatsSystem.ChangeHealth(-0.1f);
+            teamBCharacter.myLevelSystem.AddXP(Random.Range(15, 26));
+            FightCompleted(teamBCharacter, teamACharacter, false);
+        }
+        if (playerOnePowerLevel == battleDetermineValue)
+        {
+            string battleMessage = teamACharacter.charName.GetFullCharacterName() + " VS " + teamBCharacter.charName.GetFullCharacterName() + " fight is a draw";
+            BattleLog.Log(battleMessage, drawCol);
+            teamACharacter.myStatsSystem.ChangeHealth(+0.15f);
+            teamBCharacter.myStatsSystem.ChangeHealth(+0.15f);
+            teamACharacter.myLevelSystem.AddXP(Random.Range(15, 26));
+            teamBCharacter.myLevelSystem.AddXP(Random.Range(15, 26));
+            FightCompleted(teamBCharacter, teamACharacter, true);
+        }
     }
 
 

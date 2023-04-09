@@ -1,22 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-/// <summary>
-/// Functions to complete:
-/// - SetDefaultValues
-/// - AddXP
-/// - LevelUp
-/// </summary>
 public class LevelingSystem : MonoBehaviour
 {
     public StatsSystem myStatSystem; // a reference to our stats system
-
-    public int currentLevel; // Our current level.
-
-    public int currentXp; // The current amount of xp we have accumulated.
-
-    public int currentXPThreshold = 10; // The amount of xp required to level up.
+    public int currentLevel; // Current level.
+    public int currentXp; // XP accumilated.
+    public int currentXPThreshold = 10; // XP required to level up.
 
     /// <summary>
     /// sets our script to default values
@@ -24,14 +14,12 @@ public class LevelingSystem : MonoBehaviour
     /// Step 02: Called in start of the character class.
     /// Step 03: Called in start of the character class.
     /// </summary>
+    //Set the players default values.
     public void SetDefaultValues()
     {
-        // set our current level to 1
-
-        // set our current XP to zero
-
-        // set our current XP Threshold to be our level multiplied by our 100.
-
+        currentLevel = 1;
+        currentXp = 0;
+        currentXPThreshold = currentLevel * 100; //XP threshold formula is the current level * 100.
     }
 
     /// <summary>
@@ -41,13 +29,20 @@ public class LevelingSystem : MonoBehaviour
     /// Step 02: ideally called after we declar a winner of a fight, should probs give them some xp.
     /// Step 03: ideally called after we declar a winner of a fight, should probs give them some xp.
     /// </summary>
+    //Add XP to the players current XP, and level them up if they are above their threshold.
     public void AddXP(int xpGained)
     {
-        // We want to be able to add on the xpGained onto our currentXp.
+        //Add gained XP to current XP.
+        currentXp += xpGained;
 
-        // We probably want to check to see if we've gained enough xp to trigger a level up to occur.
+        //Check if they have enough XP to level up, and add levels/remove Xp if they are.
+        //This is in a while loop so if they have enough to level up multiple times, it will detect it.
+        while (currentXp >= currentXPThreshold)
+        {
+            currentXp -= currentXPThreshold;
+            LevelUp();
+        }
 
-        // if we do then let's call our level up function.
     }
 
     /// <summary>
@@ -56,9 +51,12 @@ public class LevelingSystem : MonoBehaviour
     /// Step 02: Called when we add some xp.
     /// Step 03: Called when we add some xp.
     /// </summary>
+    //Level up the player and recalculate XP.
     private void LevelUp()
     {
-        // So let's increase our current level, but let's also recalculate our XP threshold to take into account the new level we've just gained. 
+        //Increase the current level and reculauate the next XP theshold. 
+        currentLevel += 1;
+        currentXPThreshold = currentLevel * 100; 
     }
 
     #region No Mods Required.

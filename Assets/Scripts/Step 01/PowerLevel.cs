@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 
 /// <summary>
@@ -18,14 +19,17 @@ public class PowerLevel : MonoBehaviour
     /// Step 03: called from our fight manager when we are fighting.
     /// </summary>
     /// <returns></returns>
+    //Generate power level by combining dance stats with some random variation.
     public int ReturnMyDancePowerLevel()
     {
-        // let's set our player power levels, using an algorithm, the simpliest would be luck + style + rhythm
+        //Retrieve dance stats from stats script.
         int myLuck = myStats.luck;
         int myStyle = myStats.style;
         int myRhthm = myStats.rhythm;
 
-        return 0; // instead of returning 0 we probably want to return our current power level
+        //Generate and return the power level by combining dance stats with a random multiplier for each.
+        int myPowerLevel = (int)Mathf.Round(myLuck*Random.Range(0.8f, 1.2f) + myStyle*Random.Range(0.8f, 1.2f) + myRhthm*Random.Range(0.8f,1.2f));
+        return myPowerLevel;
     }
 
     /// <summary>
@@ -37,16 +41,12 @@ public class PowerLevel : MonoBehaviour
     /// <param name="myPowerLevel"></param>
     /// <param name="opponentPowerLevel"></param>
     /// <returns></returns>
+    //Determine the chance for the player to win against another player.
     public float ReturnChanceToWin(int myPowerLevel,int opponentPowerLevel)
     {
-        // let's first calculate the total power level overall.
-        int totalPower = myPowerLevel + opponentPowerLevel;
-
-        // Then let's then do a fraction of my power level and the overall power level.
-        
-        // This will give us a decimal number, i.e. 3/4 will give us 0.75 we probably want to turn that into the percentage value.
-
-        return 0; // Instead of returning 0 here we probably want to return our percentage chance to win.
+        //Get faction of both and then multiply to find the % of the player winning.
+        float chanceToWin = ((float)myPowerLevel / (myPowerLevel + opponentPowerLevel)) * 100;
+        return chanceToWin; 
     }
 
     #region NoModificationsRequired

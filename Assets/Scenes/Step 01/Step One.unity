@@ -206,7 +206,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 360719921}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560244380}
+        m_TargetAssemblyTypeName: StatsSystem, Assembly-CSharp
+        m_MethodName: TestImplementation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1560244380}
+        m_TargetAssemblyTypeName: StatsSystem, Assembly-CSharp
+        m_MethodName: TestDistributePhysicalStatsOnLevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &360719921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,7 +699,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 805233006}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560244381}
+        m_TargetAssemblyTypeName: LevelingSystem, Assembly-CSharp
+        m_MethodName: TestImplementation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &805233006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,7 +833,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 824242356}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560244380}
+        m_TargetAssemblyTypeName: StatsSystem, Assembly-CSharp
+        m_MethodName: SetDefaultValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GeneratePhysicalStatsStats()
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &824242356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,6 +1085,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1560244379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8462872739197795278, guid: c5af1eac10fe54d4989397f7b1b23677,
+    type: 3}
+  m_PrefabInstance: {fileID: 4003505456458792966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11365c4f2bc1bef4ca0a60098d0167de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1560244380 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8462872739197795279, guid: c5af1eac10fe54d4989397f7b1b23677,
+    type: 3}
+  m_PrefabInstance: {fileID: 4003505456458792966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a9cb6874a7de14a8a06fe478bae6e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1560244381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8462872739197795276, guid: c5af1eac10fe54d4989397f7b1b23677,
+    type: 3}
+  m_PrefabInstance: {fileID: 4003505456458792966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36d70aa1d2e1a043a7dac5bccae4ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1582061738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1582061741}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560244379}
+        m_TargetAssemblyTypeName: PowerLevel, Assembly-CSharp
+        m_MethodName: TestImplementation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1582061741
 MonoBehaviour:
   m_ObjectHideFlags: 0
